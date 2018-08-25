@@ -1,98 +1,88 @@
+body {
+    height: 100vh
+}
+
 main {
-    height: 100vh;
-    background-color:black;
+    background-color: black;
     color: #fff;
-    padding:5px;
-    display:grid;
-    /* grid-template-columns: repeat(5, 1fr); */
-    grid-template-rows: repeat(9, 1fr);
+    padding: 5px;
     grid-gap: 2px;
+    display: grid;
     font-family: 'Montserrat';
     font-weight: bold;
     text-align: center;
     line-height: 40px;
+    
 }
-.one{
-    background-color: red;
-    color: white;;
 
+.one {
+    background-color: red;
+    color: white;
 }
+
+.two,
+.five {
+    background-color: turquoise;
+    color: white;
+    text-align: center;
+}
+
 .three {
     background-image: url(images/tie.png);
+    grid-column: span 2;
 }
+
 .four {
-    background-image: url(images/sign.jpg); 
+    background-image: url(images/sign.jpg);
 }
-.six{
+
+.six {
     background-image: url(images/moped.jpg);
+    grid-column: span 2;
 }
-.seven{
+
+.seven {
     background-image: url(images/sax.jpg);
 }
-.eight{
+
+.eight {
     background-image: url(images/light.jpg);
 }
-.nine{
+
+.nine {
     background-image: url(images/flower.jpg);
 }
-.ten{
+
+.ten {
     background-color: turquoise;
-    color:white;
+    color: white;
 }
 
-.thick{
-grid-column: span 3;
-grid-row: span 2;
-background-color: turquoise;
-color: white;
-text-align: center;
-}
-
-.thin{
-    grid-column: span 2;
-    grid-row: span 2;
-}
-
-.wide {
-grid-column: span 5;
-grid-row: span 1;
+@media (max-width: 600px) {
+    main {
+        grid-template-columns: 1fr 2 fr;
+        grid-template-rows: repeat(10, 100px);
+    }
+    .one,
+    .two,
+    .four,
+    .five {
+        grid-row: span 2;
+    }
 }
 
 @media only screen and (min-width: 600px) {
-   
-   .hidden-xs {
-    display: initial;
-   }
-main {
-display:grid;
-grid-template-columns: repeat(5,1fr);
-grid-template-rows: repeat(4, 1fr);
-max-width:100%;
-grid-gap:2px;
-}
-.one {
-    grid-column-start: 1;
-    grid-column-end: 1;
-
-}
-.four {
-    grid-column-start: 5;
-}
-.thick {
-    grid-column: span 1;
-    grid-row: span 2;
-}
-.wide {
-    grid-column: span 2;
-    grid-row: span 2;
-}
-.eight, .nine {
-    grid-
-}
-.ten {
-    grid-column-start: 5;
-    grid-row-start: 4;
-
-    
-}
+    main {
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: 100px 100px 100px;
+    }
+    .two,
+    .three,
+    .four,
+    .five,
+    .six,
+    .eight
+ {
+        grid-row: span 2;
+    }
 }
